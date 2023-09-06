@@ -68,15 +68,9 @@ export default function Header() {
 							<DropdownMenuGroup>
 								<DropdownMenuItem>Profile</DropdownMenuItem>
 								<DropdownMenuItem>Favorites</DropdownMenuItem>
-								<DropdownMenuItem>Billing</DropdownMenuItem>
-								<DropdownMenuItem>Settings</DropdownMenuItem>
 							</DropdownMenuGroup>
 							<DropdownMenuSeparator />
-							<DropdownMenuItem>
-								<form action="/auth/sign-out" method="post">
-									<button>Logout</button>
-								</form>
-							</DropdownMenuItem>
+							<DropdownMenuItem>Logout</DropdownMenuItem>
 						</DropdownMenuContent>
 					</DropdownMenu>
 				</div>
