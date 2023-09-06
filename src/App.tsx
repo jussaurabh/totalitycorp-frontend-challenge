@@ -5,7 +5,6 @@ import CategoryProductsPage from "./pages/category_products";
 import ProductPage from "./pages/product";
 import CartPage from "./pages/cart";
 import ProfilePage from "./pages/profile";
-import FavoritePage from "./pages/favorite";
 import AddressPage from "./pages/address";
 import UserLayout from "./components/user_layout";
 import OrdersPage from "./pages/orders";
@@ -21,7 +20,7 @@ function App() {
 					<Route path="/user" element={<UserLayout />}>
 						<Route path="/user/profile" element={<ProfilePage />} />
 						<Route path="/user/address" element={<AddressPage />} />
-						<Route path="/user/favorites" element={<FavoritePage />} />
+						<Route path="/user/favorites" element={<OrdersPage />} />
 						<Route path="/user/orders" element={<OrdersPage />} />
 					</Route>
 					<Route path="/cart" element={<CartPage />} />

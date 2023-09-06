@@ -29,6 +29,13 @@ export default function UserLayout() {
 
 						<div
 							className="flex flex-row items-center justify-start border-t border-gray-100 p-4 cursor-pointer hover:bg-gray-100"
+							onClick={() => navigate("/user/favorites")}
+						>
+							<User size={20} />
+							<div className="text-xl ml-5">Favorites</div>
+						</div>
+						<div
+							className="flex flex-row items-center justify-start border-t border-gray-100 p-4 cursor-pointer hover:bg-gray-100"
 							onClick={() => navigate("/user/profile")}
 						>
 							<User size={20} />
