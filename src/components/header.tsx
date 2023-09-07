@@ -14,8 +14,14 @@ import {
 import { ShoppingCart } from "lucide-react";
 import AuthDialog from "./auth_dialog";
 import TextButton from "./text_button";
+import { useAuth } from "../hooks/auth";
 
 export default function Header() {
+	const { session, user } = useAuth();
+
+	console.log(session);
+	console.log(user);
+
 	return (
 		<nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
 			<div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm text-foreground">
