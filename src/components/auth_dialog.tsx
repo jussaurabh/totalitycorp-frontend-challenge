@@ -1,18 +1,18 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 import Spinner from "./ui/spinner";
+import SolidButton from "./solid_button";
+import OutlineButton from "./outline_button";
 
 export default function AuthDialog({ isLoginMode = true }: { isLoginMode?: boolean }) {
 	const [isVisible, setVisible] = useState(false);
 	return (
 		<div>
-			<button
-				className="block text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-				type="button"
-				onClick={() => setVisible(true)}
-			>
-				{isLoginMode ? "Login" : "Sign Up"}
-			</button>
+			{isLoginMode ? (
+				<SolidButton onClick={() => setVisible(true)}>Login</SolidButton>
+			) : (
+				<OutlineButton onClick={() => setVisible(true)}>Sign Up</OutlineButton>
+			)}
 
 			{isVisible && (
 				<div className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full max-h-full backdrop-blur-sm">
@@ -94,9 +94,7 @@ export default function AuthDialog({ isLoginMode = true }: { isLoginMode?: boole
 function FormButton({ name }: { name: string }) {
 	return (
 		<>
-			<button type="button" className="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
-				{name}
-			</button>
+			{name == "Login" ? <SolidButton>Login</SolidButton> : <OutlineButton>Sign Up</OutlineButton>}
 			<button type="button" disabled className="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
 				<Spinner />
 			</button>

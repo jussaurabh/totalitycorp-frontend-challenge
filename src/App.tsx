@@ -8,6 +8,7 @@ import ProfilePage from "./pages/profile";
 import AddressPage from "./pages/address";
 import UserLayout from "./components/user_layout";
 import OrdersPage from "./pages/orders";
+import SellerLayout from "./components/seller_layout";
 
 function App() {
 	return (
@@ -24,6 +25,10 @@ function App() {
 						<Route path="/user/orders" element={<OrdersPage />} />
 					</Route>
 					<Route path="/cart" element={<CartPage />} />
+					<Route path="/seller" element={<SellerLayout />}>
+						<Route path="/seller/profile" element={<ProfilePage />} />
+						<Route path="/seller/address" element={<AddressPage />} />
+					</Route>
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -1,13 +1,13 @@
-import { ChevronRight, Minus, Plus } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import OutlineButton from "../components/outline_button";
-import { Link } from "react-router-dom";
 import { Separator } from "../components/ui/separator";
 import SolidButton from "../components/solid_button";
+import BreadCrumbs from "../components/breadcrumbs";
 
 export default function CartPage() {
 	return (
 		<div className="mt-8">
-			<div className="flex flex-row items-center mb-5">
+			{/* <div className="flex flex-row items-center mb-5">
 				<Link to="/" className="text-sm text-gray-500">
 					Home
 				</Link>
@@ -15,7 +15,13 @@ export default function CartPage() {
 				<Link to="" className="text-sm text-gray-500">
 					Cart
 				</Link>
-			</div>
+			</div> */}
+			<BreadCrumbs
+				paths={[
+					{ href: "/", name: "Home" },
+					{ href: "/cart", name: "Cart" },
+				]}
+			/>
 			<div className="grid grid-cols-12 gap-5">
 				<div className="col-span-8">
 					<div className="border rounded-sm p-4 flex flex-row justify-between mb-4">

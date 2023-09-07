@@ -13,6 +13,7 @@ import {
 } from "./ui/dropdown-menu";
 import { ShoppingCart } from "lucide-react";
 import AuthDialog from "./auth_dialog";
+import TextButton from "./text_button";
 
 export default function Header() {
 	return (
@@ -48,7 +49,7 @@ export default function Header() {
 				</div>
 
 				<div className="flex flex-row gap-3 items-center">
-					<Link to="/cart/23">
+					<Link to="/cart">
 						<div className="relative">
 							<ShoppingCart size={25} />
 							<div className="bg-blue-600 rounded-full absolute top-[-5px] right-[-5px] text-white px-1">8</div>
@@ -66,8 +67,12 @@ export default function Header() {
 							<DropdownMenuLabel>My Account</DropdownMenuLabel>
 							<DropdownMenuSeparator />
 							<DropdownMenuGroup>
-								<DropdownMenuItem>Profile</DropdownMenuItem>
-								<DropdownMenuItem>Favorites</DropdownMenuItem>
+								<DropdownMenuItem>
+									<Link to="/user/profile">Profile</Link>
+								</DropdownMenuItem>
+								<DropdownMenuItem>
+									<Link to="/user/favorites">Favorites</Link>
+								</DropdownMenuItem>
 							</DropdownMenuGroup>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem>Logout</DropdownMenuItem>
@@ -78,6 +83,7 @@ export default function Header() {
 				<div className="flex flex-row gap-3">
 					<AuthDialog />
 					<AuthDialog isLoginMode={false} />
+					<TextButton>Become a seller</TextButton>
 				</div>
 			</div>
 		</nav>
